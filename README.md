@@ -30,19 +30,24 @@
 
 ## 📂 Cấu trúc thư mục (Project Structure)
 Mã nguồn được tổ chức chặt chẽ theo mô hình **MVC (Model - View - Controller)**:
-```📦 src
-┣ 📂 model       # Chứa các lớp thực thể: Snake, Food, Obstacle, GameObject
-┣ 📂 view        # Chứa lớp giao diện đồ họa: GameFrame, GamePanel
-┣ 📂 controller  # Chứa logic xử lý phím bấm và kiểm tra va chạm
-┣ 📂 utils       # Chứa FileHandler (Đọc/Ghi file) và InvalidScoreException
-┗ 📜 TestModel.java # File chạy thử để kiểm tra logic phần Model và File I/O```
+
+📦 **src**
+
+┣ 📂 **model**  # Chứa các lớp thực thể: Snake, Food, Obstacle, GameObject  
+┣ 📂 **view**   # Chứa lớp giao diện đồ họa: GameFrame, GamePanel  
+┣ 📂 **controller**   # Chứa logic xử lý phím bấm và kiểm tra va chạm  
+┣ 📂 **utils**   # Chứa FileHandler (Đọc/Ghi file) và InvalidScoreException  
+┗ 📜 **TestModel.java**   # File chạy thử để kiểm tra logic phần Model và File I/O
 
 ## 🚀 Hướng dẫn cài đặt và chạy (Installation)
 1. **Clone repository này về máy:**
-`git clone https://github.com/nguyenthithuyduong211/Java-SnakeGame-GroupJ14.git`
+
+   `git clone https://github.com/nguyenthithuyduong211/Java-SnakeGame-GroupJ14.git`
+   
 2. **Cấu hình:**
 * Dự án sử dụng File I/O nên không cần cài đặt thêm CSDL MySQL.
 * Đảm bảo máy đã cài JDK 17+.
+
 3. **Chạy ứng dụng:**
 * Mở project bằng IDE.
 * Chạy file `Main.java` (hoặc `TestModel.java` để xem logic) để bắt đầu.
