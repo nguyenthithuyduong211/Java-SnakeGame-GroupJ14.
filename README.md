@@ -1,15 +1,15 @@
 # 🎓 🐍 GAME 2D & ỨNG DỤNG ĐỒ HỌA / RẮN SĂN MỒI (SNAKE) NÂNG CẤP
 > **Bài tập lớn cuối kỳ môn Lập trình Java**
 
-> **Lớp: 25CNTT1**
+> **Nhóm thực hiện:** Nhóm J14
 
-> **Thực hiện bởi: Nhóm J14**
+> **Lớp:** 25CNTT1 - Khoa Toán Tin - ĐHSP Đà Nẵng
 ## 👥 Thông tin nhóm (Team Members)
 | STT | Họ và Tên | Mã Sinh Viên | Vai trò / Nhiệm vụ | Link GitHub Cá Nhân |
 |---|---|---|---|---|
-| 1 | **Nguyễn Thị Thùy Dương** | 3120225035 | Code Model, File I/O, Exception | [GitHub](https://github.com/nguyenthithuyduong211) |
-| 2 | **Đỗ Ngọc Khánh An** | 3120225001 | Code GUI (Giao diện), Vẽ đối tượng | [GitHub](https://github.com/ngockhanhan15-netizen) |
-| 3 | **Phạm Khánh Vy** | 3120225180 | Code Controller, Xử lý phím bấm | [GitHub](https://github.com/kzylazyy) |
+| 1 | **Nguyễn Thị Thùy Dương** | 3120225035 | Model & Utils, Xây dựng Class thực thể, I/O File & Exception, Quản lý GitHub & Documentation | [GitHub](https://github.com/nguyenthithuyduong211) |
+| 2 | **Đỗ Ngọc Khánh An** | 3120225001 | View, Đồ họa Game, Thiết kế Giao diện (Swing/Layout) | [GitHub](https://github.com/ngockhanhan15-netizen) |
+| 3 | **Phạm Khánh Vy** | 3120225180 | Controller, Game Loop, Xử lý sự kiện & Va chạm | [GitHub](https://github.com/kzylazyy) |
 
 ## 📝 Giới thiệu dự án (Description)
 Đây là trò chơi "Rắn săn mồi" cổ điển được phát triển trên nền tảng Java. Ứng dụng giúp người dùng giải trí và rèn luyện phản xạ, đồng thời áp dụng các nguyên lý lập trình hướng đối tượng (OOP) để quản lý logic di chuyển, va chạm và hệ thống điểm số.
