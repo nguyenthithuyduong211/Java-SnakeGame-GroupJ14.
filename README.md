@@ -52,6 +52,11 @@ Mã nguồn được tổ chức chặt chẽ theo mô hình **MVC (Model - View
 * Mở project bằng IDE.
 * Chạy file `Main.java` (hoặc `TestModel.java` để xem logic) để bắt đầu.
 
+## 🎮 Cách chạy Game:
+1. Tải toàn bộ Source code về.
+2. Mở bằng IDE (VS Code/IntelliJ).
+3. Chạy file Main.java.
+
 ## 📸 Ảnh chụp màn hình (Screenshots)
 ![Màn hình Đăng Nhập](https://via.placeholder.com/600x400?text=Snake+Game+Login+Screen)
 ![Màn hình Game Chơi](https://via.placeholder.com/600x400?text=Snake+Game+Interface)
