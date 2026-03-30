@@ -9,7 +9,7 @@
 |---|---|---|---|---|
 | 1 | **Nguyễn Thị Thùy Dương** | 3120225035 | Code Model, File I/O, Exception | [GitHub](https://github.com/nguyenthithuyduong211) |
 | 2 | **Đỗ Ngọc Khánh An** | 3120225001 | Code GUI (Giao diện), Vẽ đối tượng | [GitHub](https://github.com/ngockhanhan15-netizen) |
-| 3 | **Phạm Khánh Vy** | 3120225180 | Code Controller, Xử lý phím bấm | [GitHub](#) |
+| 3 | **Phạm Khánh Vy** | 3120225180 | Code Controller, Xử lý phím bấm | [GitHub](https://github.com/kzylazyy) |
 
 ## 📝 Giới thiệu dự án (Description)
 Đây là trò chơi "Rắn săn mồi" cổ điển được phát triển trên nền tảng Java. Ứng dụng giúp người dùng giải trí và rèn luyện phản xạ, đồng thời áp dụng các nguyên lý lập trình hướng đối tượng (OOP) để quản lý logic di chuyển, va chạm và hệ thống điểm số.
@@ -30,12 +30,12 @@
 
 ## 📂 Cấu trúc thư mục (Project Structure)
 Mã nguồn được tổ chức chặt chẽ theo mô hình **MVC (Model - View - Controller)**:
-📦 src
+```📦 src
 ┣ 📂 model       # Chứa các lớp thực thể: Snake, Food, Obstacle, GameObject
 ┣ 📂 view        # Chứa lớp giao diện đồ họa: GameFrame, GamePanel
 ┣ 📂 controller  # Chứa logic xử lý phím bấm và kiểm tra va chạm
 ┣ 📂 utils       # Chứa FileHandler (Đọc/Ghi file) và InvalidScoreException
-┗ 📜 TestModel.java # File chạy thử để kiểm tra logic phần Model và File I/O
+┗ 📜 TestModel.java # File chạy thử để kiểm tra logic phần Model và File I/O```
 
 ## 🚀 Hướng dẫn cài đặt và chạy (Installation)
 1. **Clone repository này về máy:**
@@ -48,5 +48,6 @@ Mã nguồn được tổ chức chặt chẽ theo mô hình **MVC (Model - View
 * Chạy file `Main.java` (hoặc `TestModel.java` để xem logic) để bắt đầu.
 
 ## 📸 Ảnh chụp màn hình (Screenshots)
-![Màn hình Game](https://via.placeholder.com/600x400?text=Snake+Game+Interface)
-![Màn hình Lưu Điểm](https://via.placeholder.com/600x400?text=Highscore+Result)
+![Màn hình Đăng Nhập](https://via.placeholder.com/600x400?text=Snake+Game+Login+Screen)
+![Màn hình Game Chơi](https://via.placeholder.com/600x400?text=Snake+Game+Interface)
+![Màn hình Kết Thúc và Lưu Điểm](https://via.placeholder.com/600x400?text=Game+Over+and+Highscore+Result)
