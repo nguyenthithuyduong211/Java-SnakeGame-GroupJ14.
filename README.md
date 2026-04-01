@@ -60,6 +60,8 @@ Mã nguồn được tổ chức chặt chẽ theo mô hình **MVC (Model - View
 3. Chạy file Main.java.
 
 ## 📸 Ảnh chụp màn hình (Screenshots)
-![Màn hình Đăng Nhập](https://via.placeholder.com/600x400?text=Snake+Game+Login+Screen)
-![Màn hình Game Chơi](https://via.placeholder.com/600x400?text=Snake+Game+Interface)
-![Màn hình Kết Thúc và Lưu Điểm](https://via.placeholder.com/600x400?text=Game+Over+and+Highscore+Result)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e32034ea-4cde-4c07-acbc-b43c386044ba" width="30%" alt="Màn hình Đăng Nhập">
+  <img src="https://github.com/user-attachments/assets/ff099487-c729-4015-9478-4b7112faa623" width="30%" alt="Màn hình Game Chơi">
+  <img src="https://github.com/user-attachments/assets/8708c5e3-5069-4848-a7dd-b8d134d0096d" width="30%" alt="Màn hình Kết Thúc">
+</p>
