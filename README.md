@@ -9,7 +9,7 @@
 |---|---|---|---|---|
 | 1 | **Nguyễn Thị Thùy Dương** | 3120225035 | Model & Utils, Xây dựng Class thực thể, I/O File & Exception, Quản lý GitHub & Documentation | [GitHub](https://github.com/nguyenthithuyduong211) |
 | 2 | **Đỗ Ngọc Khánh An** | 3120225001 | View, Đồ họa Game, Thiết kế Giao diện (Swing/Layout) | [GitHub](https://github.com/ngockhanhan15-netizen) |
-| 3 | **Phạm Khánh Vy** | 3120225180 | Controller, Game Loop, Xử lý sự kiện & Va chạm | [GitHub](https://github.com/khanhando8910@gmail.com) |
+| 3 | **Phạm Khánh Vy** | 3120225180 | Controller, Game Loop, Xử lý sự kiện & Va chạm | [GitHub](https://github.com/kzylazy) |
 
 ## 📝 Giới thiệu dự án (Description)
 Đây là trò chơi "Rắn săn mồi" cổ điển được phát triển trên nền tảng Java. Ứng dụng giúp người dùng giải trí và rèn luyện phản xạ, đồng thời áp dụng các nguyên lý lập trình hướng đối tượng (OOP) để quản lý logic di chuyển, va chạm và hệ thống điểm số.
