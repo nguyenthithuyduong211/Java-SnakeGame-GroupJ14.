@@ -42,7 +42,8 @@ Mã nguồn được tổ chức chặt chẽ theo mô hình **MVC (Model - View
 ## 🚀 Hướng dẫn cài đặt và chạy (Installation)
 1. **Clone repository này về máy:**
 
-   `git clone https://github.com/nguyenthithuyduong211/Java-SnakeGame-GroupJ14.git`
+   <img width="101" height="99" alt="image" src="https://github.com/user-attachments/assets/5963d8bd-6c33-4af1-84f4-117d79aa5e11" />
+
    
 2. **Cấu hình:**
 * Dự án sử dụng File I/O nên không cần cài đặt thêm CSDL MySQL.
