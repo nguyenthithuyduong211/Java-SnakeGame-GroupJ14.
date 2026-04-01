@@ -42,7 +42,8 @@ Mã nguồn được tổ chức chặt chẽ theo mô hình **MVC (Model - View
 ## 🚀 Hướng dẫn cài đặt và chạy (Installation)
 1. **Clone repository này về máy:**
 
-   <img width="101" height="99" alt="image" src="https://github.com/user-attachments/assets/5963d8bd-6c33-4af1-84f4-117d79aa5e11" />
+   <img width="99" height="95" alt="image" src="https://github.com/user-attachments/assets/cd1748c7-b630-4302-8df0-fe938d983c78" />
+
 
    
 2. **Cấu hình:**
