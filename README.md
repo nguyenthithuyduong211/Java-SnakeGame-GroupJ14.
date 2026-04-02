@@ -53,7 +53,6 @@
 Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
  
 ```
-📦 src
  ┣ 📂 model               # Lớp thực thể – dữ liệu game
  ┃ ┣ 📜 GameObject.java   # Abstract base class (x, y, respawn)
  ┃ ┣ 📜 Snake.java        # Logic di chuyển, phát triển rắn
@@ -129,20 +128,11 @@ Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
  
 **1. Clone repository về máy:**
 ```bash
-<img width="99" height="99" alt="image" src="https://github.com/user-attachments/assets/f3c95ffc-ace2-46b3-8bda-6920ddaae836" />
+<img width="111" height="110" alt="image" src="https://github.com/user-attachments/assets/9ca345df-bbc2-44e4-9948-8410a831d096" />
 
 ```
  
-**2. Đảm bảo cấu trúc thư mục:**
-```
-project-root/
- ├── src/          ← Mã nguồn Java
- ├── images/       ← Ảnh nền, button PNG
- ├── sounds/       ← File .wav âm thanh
- └── Main.java
-```
- 
-**3. Biên dịch và chạy:**
+**2. Biên dịch và chạy:**
 ```bash
 # Biên dịch
 javac -d out -sourcepath src src/Main.java
