@@ -48,14 +48,14 @@ public class LevelSelectPanel extends JPanel {
         }
     }
 
-    private void loadImages() {
-        try {
-            backgroundImage = ImageIO.read(new File("images/level_select_background.png"));
-            buttonImage = ImageIO.read(new File("images/button_normal.png"));
-        } catch (IOException e) {
-            System.err.println("Không load được ảnh Level Select");
-        }
+   private void loadImages() {
+    try {
+        backgroundImage = ImageIO.read(new File("images/menu_background.png"));
+        buttonImage = ImageIO.read(new File("images/button_normal.png"));
+    } catch (IOException e) {
+        System.err.println("Không load được ảnh Level Select");
     }
+}
 
     private JButton createButton(String text) {
         JButton btn = new JButton(text) {
