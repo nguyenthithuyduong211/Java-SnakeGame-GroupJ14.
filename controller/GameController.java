@@ -3,8 +3,6 @@ package controller;
 import model.*;
 import utils.*;
 import view.GamePanel;
-import view.LevelWinPanel;
-import view.GameOverPanel;
 import view.MainFrame;
 
 import javax.swing.*;
@@ -31,6 +29,7 @@ public class GameController {
 
     private GameMode gameMode = GameMode.CLASSIC;
     private Difficulty difficulty = Difficulty.MEDIUM;
+    private boolean isSpeedRush = false;
 
     private int highScore = FileHandler.readHighScore();
 
@@ -56,6 +55,7 @@ public class GameController {
         currentGridSize = 15;
         score = 0;
         isMoving = false;
+        isSpeedRush = false;
 
         snake = new Snake(3, 7);
         snake.getBody().add(new int[]{2, 7});
@@ -88,6 +88,7 @@ public class GameController {
         isLevelMode = false;
         difficulty = d;
         gameMode = m;
+        isSpeedRush = (m == GameMode.SPEED_RUSH);
         currentGridSize = size;
         score = 0;
         eatenFood = 0;
@@ -162,26 +163,31 @@ public class GameController {
 
             SoundManager.playEat();
 
+            if (isSpeedRush) increaseSpeed();
+
             if (isLevelMode && eatenFood >= requiredFood) {
                 timer.stop();
                 showLevelWin();
                 return;
             }
-            food.respawn(currentGridSize, currentGridSize, obstacles);
+            // ==================== SỬA Ở ĐÂY ====================
+            food.respawn(currentGridSize, currentGridSize, obstacles, snake);
+            // =================================================
+        }
+    }
+
+    public void increaseSpeed() {
+        if (timer != null) {
+            int currentDelay = timer.getDelay();
+            int newDelay = Math.max(25, currentDelay - 7);
+            timer.setDelay(newDelay);
         }
     }
 
     private void showLevelWin() {
         SoundManager.playWin();
         MainFrame parent = (MainFrame) SwingUtilities.getWindowAncestor(gamePanel);
-        LevelWinPanel winPanel = new LevelWinPanel(parent, this, currentLevel.level);
-
-        JDialog dialog = new JDialog(parent, true);
-        dialog.setUndecorated(true);
-        dialog.setSize(550, 550);
-        dialog.setLocationRelativeTo(gamePanel);
-        dialog.setContentPane(winPanel);
-        dialog.setVisible(true);
+        parent.showLevelWin(currentLevel.level);
     }
 
     private void handleGameOver() {
@@ -191,17 +197,7 @@ public class GameController {
         if (!isLevelMode) FileHandler.saveHighScore(score);
 
         MainFrame parent = (MainFrame) SwingUtilities.getWindowAncestor(gamePanel);
-        GameOverPanel overPanel = new GameOverPanel(
-            parent, this, isLevelMode,
-            isLevelMode ? currentLevel.level : score
-        );
-
-        JDialog dialog = new JDialog(parent, true);
-        dialog.setUndecorated(true);
-        dialog.setSize(550, 550);
-        dialog.setLocationRelativeTo(gamePanel);
-        dialog.setContentPane(overPanel);
-        dialog.setVisible(true);
+        parent.showGameOver(isLevelMode, isLevelMode ? currentLevel.level : score);
     }
 
     public void handleKeyPress(int keyCode) {
@@ -218,19 +214,51 @@ public class GameController {
             case KeyEvent.VK_DOWN, KeyEvent.VK_S -> snake.setDirection("DOWN");
             case KeyEvent.VK_LEFT, KeyEvent.VK_A -> snake.setDirection("LEFT");
             case KeyEvent.VK_RIGHT, KeyEvent.VK_D -> snake.setDirection("RIGHT");
-            case KeyEvent.VK_P -> isPaused = !isPaused;
+            case KeyEvent.VK_P -> togglePause();
         }
     }
 
-    public void togglePause() { 
-        isPaused = !isPaused; 
+    public void togglePause() {
+        showPauseScreen();
+    }
+
+    public void pauseGame() {
+        isPaused = true;
+        if (timer != null && timer.isRunning()) timer.stop();
+    }
+
+    public void resumeGame() {
+        isPaused = false;
+        if (timer != null && !timer.isRunning()) timer.start();
+    }
+
+    public void showPauseScreen() {
+        pauseGame();
+        if (gamePanel != null) {
+            MainFrame parent = (MainFrame) SwingUtilities.getWindowAncestor(gamePanel);
+            if (parent != null) {
+                parent.showPause();
+            }
+        }
     }
 
     public void restartCurrentLevel() {
+        MainFrame parent = (gamePanel != null) 
+                ? (MainFrame) SwingUtilities.getWindowAncestor(gamePanel) 
+                : null;
+
         if (isLevelMode && currentLevel != null) {
-            startLevel(currentLevel);
+            if (parent != null) {
+                parent.startLevel(currentLevel);
+            } else {
+                startLevel(currentLevel);
+            }
         } else {
-            startEndless(difficulty, gameMode, currentGridSize);
+            if (parent != null) {
+                parent.startEndless(difficulty, gameMode, currentGridSize);
+            } else {
+                startEndless(difficulty, gameMode, currentGridSize);
+            }
         }
     }
 
@@ -245,6 +273,7 @@ public class GameController {
     public int getEatenFood() { return eatenFood; }
     public boolean isPaused() { return isPaused; }
     public int getCurrentLevel() { return currentLevel != null ? currentLevel.level : 0; }
+    public GameMode getGameMode() { return gameMode; }
 
     public static int getGlobalHighScore() { 
         return FileHandler.readHighScore(); 
