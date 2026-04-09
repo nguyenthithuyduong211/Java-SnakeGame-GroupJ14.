@@ -3,8 +3,7 @@ package utils;
 public enum GameMode {
     CLASSIC("Cổ điển"),
     NO_WALLS("Xuyên tường"),
-    SPEED_RUSH("Tăng tốc"),
-    CHAOS("Hỗn loạn");
+    SPEED_RUSH("Tăng tốc");     //  Chế độ mới
 
     private final String displayName;
 
