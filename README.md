@@ -7,9 +7,9 @@
 ## 👥 Thông tin nhóm (Team Members)
 | STT | Họ và Tên | Mã Sinh Viên | Vai trò / Nhiệm vụ | Link GitHub Cá Nhân |
 |---|---|---|---|---|
-| 1 | **Nguyễn Thị Thùy Dương** | 3120225035 | Model & Utils, Xây dựng Class thực thể, I/O File & Exception, Quản lý GitHub & Documentation | [GitHub](https://github.com/nguyenthithuyduong211) |
-| 2 | **Đỗ Ngọc Khánh An** | 3120225001 | View, Đồ họa Game, Thiết kế Giao diện (Swing/Layout) | [GitHub](https://github.com/ngockhanhan15-netizen) |
-| 3 | **Phạm Khánh Vy** | 3120225180 | Controller, Game Loop, Xử lý sự kiện & Va chạm | [GitHub](https://github.com/kzylazyy) |
+| 1 | **Phạm Khánh Vy** | 3120225180 | Controller, đồng bộ, tối ưu hóa hệ thống | [GitHub](https://github.com/kzylazyy) |
+| 2 | **Nguyễn Thị Thùy Dương** | 3120225035 | Model & Utils, I/O File & Exception,Documentation | [GitHub](https://github.com/nguyenthithuyduong211) |
+| 3 | **Đỗ Ngọc Khánh An** | 3120225001 | View, Đồ họa Game, Thiết kế Giao diện (Swing/Layout) | [GitHub](https://github.com/ngockhanhan15-netizen) |
 
 ## 📝 Giới thiệu dự án (Description)
  
@@ -52,36 +52,40 @@
  
 Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
  
-```
- ┣ 📂 model               # Lớp thực thể – dữ liệu game
- ┃ ┣ 📜 GameObject.java   # Abstract base class (x, y, respawn)
- ┃ ┣ 📜 Snake.java        # Logic di chuyển, phát triển rắn
- ┃ ┣ 📜 Food.java         # Vị trí và màu sắc thức ăn
- ┃ ┗ 📜 Obstacle.java     # Chướng ngại vật cố định
- ┣ 📂 controller          # Logic nghiệp vụ
- ┃ ┣ 📜 GameController.java  # Điều phối toàn bộ game
- ┃ ┗ 📜 GameLoop.java        # Vòng lặp Timer
- ┣ 📂 view                # Giao diện người dùng
- ┃ ┣ 📜 MainFrame.java        # JFrame chính, CardLayout
- ┃ ┣ 📜 GamePanel.java        # paintComponent – vẽ game
- ┃ ┣ 📜 MainMenuPanel.java    # Menu chính + bounce effect
- ┃ ┣ 📜 LevelSelectPanel.java # Chọn màn chơi
- ┃ ┣ 📜 EndlessModePanel.java # Cài đặt chế độ vô tận
- ┃ ┣ 📜 GameOverPanel.java    # Màn hình thua cuộc
- ┃ ┣ 📜 LevelWinPanel.java    # Màn hình thắng màn
- ┃ ┣ 📜 SettingsPanel.java    # Cài đặt âm thanh
- ┃ ┗ 📜 SettingsDialog.java   # Dialog cài đặt âm lượng
- ┣ 📂 utils               # Tiện ích dùng chung
- ┃ ┣ 📜 Difficulty.java           # Enum độ khó (EASY/MEDIUM/HARD)
- ┃ ┣ 📜 GameMode.java             # Enum chế độ chơi
- ┃ ┣ 📜 LevelConfig.java          # Cấu hình từng màn
- ┃ ┣ 📜 FileHandler.java          # Đọc/ghi highscore.txt
- ┃ ┣ 📜 Settings.java             # Đọc/ghi settings.txt
- ┃ ┣ 📜 SoundManager.java         # Quản lý âm thanh
- ┃ ┗ 📜 InvalidScoreException.java # Custom Exception
- ┣ 📂 images              # Ảnh nền & button PNG
- ┣ 📂 sounds              # File âm thanh .wav
- ┗ 📜 Main.java           # Entry-point khởi động ứng dụng
+```              
+ ┣ 📂 controller               # Logic nghiệp vụ
+ ┃ ┣ 📜 GameController.java    # Điều phối toàn bộ game
+ ┃ ┗ 📜 GameLoop.java          # Vòng lặp Timer
+ ┣ 📂 model                    # Lớp thực thể – dữ liệu game
+ ┃ ┣ 📜 GameObject.java        # Abstract base class (x, y, respawn)
+ ┃ ┣ 📜 Snake.java             # Logic di chuyển, phát triển rắn
+ ┃ ┣ 📜 Food.java              # Vị trí và màu sắc thức ăn
+ ┃ ┗ 📜 Obstacle.java          # Chướng ngại vật cố định
+ ┣ 📂 view                     # Giao diện người dùng
+ ┃ ┣ 📜 MainFrame.java         # JFrame chính, CardLayout
+ ┃ ┣ 📜 GamePanel.java         # paintComponent – vẽ game
+ ┃ ┣ 📜 MainMenuPanel.java     # Menu chính + bounce effect
+ ┃ ┣ 📜 LevelSelectPanel.java  # Chọn màn chơi
+ ┃ ┣ 📜 EndlessModePanel.java  # Cài đặt chế độ vô tận
+ ┃ ┣ 📜 GameOverPanel.java     # Màn hình thua cuộc
+ ┃ ┣ 📜 LevelWinPanel.java     # Màn hình thắng màn
+ ┃ ┣ 📜 SettingsPanel.java     # Cài đặt âm thanh
+ ┃ ┗ 📜 SettingsDialog.java    # Dialog cài đặt âm lượng
+ ┣ 📂 utils                    # Tiện ích dùng chung
+ ┃ ┣ 📜 Difficulty.java        # Enum độ khó (EASY/MEDIUM/HARD)
+ ┃ ┣ 📜 GameMode.java          # Enum chế độ chơi
+ ┃ ┣ 📜 LevelConfig.java       # Cấu hình từng màn
+ ┃ ┣ 📜 FileHandler.java       # Đọc/ghi highscore.txt
+ ┃ ┣ 📜 Settings.java          # Đọc/ghi settings.txt
+ ┃ ┣ 📜 SoundManager.java      # Quản lý âm thanh
+ ┃ ┗ 📜 InvalidScoreException.java  # Custom Exception
+ ┣ 📂 images                   # Ảnh nền & button PNG
+ ┣ 📂 sounds                   # File âm thanh .wav
+ ┣ 📜 Main.java                # Entry-point khởi động ứng dụng
+ ┣ 📜 highscore.txt            # Lưu điểm cao (tự tạo khi chạy)
+ ┣ 📜 settings.txt             # Lưu cài đặt (tự tạo khi chạy)
+ ┣ 📜 .gitignore
+ ┗ 📜 README.md
 ```
  
 ---
@@ -106,19 +110,19 @@ Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
  
 ---
 
- ## 🎮 Hướng dẫn chơi
+## 🎮 Hướng dẫn chơi
  
 | Phím | Hành động |
 |------|-----------|
-|`↑` | Di chuyển lên |
-|`↓` | Di chuyển xuống |
-|`←` | Di chuyển trái |
-| `→` | Di chuyển phải |
-| `Nhấn chuột vào nút Tạm dừng` | Tạm dừng |
+| `W` / `↑` | Di chuyển lên |
+| `S` / `↓` | Di chuyển xuống |
+| `A` / `←` | Di chuyển trái |
+| `D` / `→` | Di chuyển phải |
+| `P` | Tạm dừng / Tiếp tục |
  
 ---
-
- ## 🚀 Hướng dẫn cài đặt và chạy (Installation)
+ 
+## 🚀 Hướng dẫn cài đặt và chạy (Installation)
  
 ### Yêu cầu
 - **JDK 17** trở lên
@@ -127,16 +131,26 @@ Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
 ### Các bước chạy
  
 **1. Clone repository về máy:**
-```bash
 
-![z7708589458340_1678bb6c7820afe2eacee9bb56eaf6ec](https://github.com/user-attachments/assets/b0218e50-3009-40a6-800b-f369d91e4024)
+<img width="101" height="99" alt="image" src="https://github.com/user-attachments/assets/e94ac48a-445e-4e53-b9bc-8cfc518d7b60" />
 
+
+**2. Đảm bảo cấu trúc thư mục:**
 ```
-# 2. Biên dịch và chạy:
-
-# Biên dịch (Lệnh này sẽ gom tất cả file .java ở các folder vào thư mục out)
-javac -encoding utf-8 -d out Main.java Controller/*.java model/*.java view/*.java utils/*.java
-
+ ├── controller/   ← Package controller
+ ├── model/        ← Package model
+ ├── view/         ← Package view
+ ├── utils/        ← Package utils
+ ├── images/       ← Ảnh nền, button PNG
+ ├── sounds/       ← File .wav âm thanh
+ └── Main.java     ← File chạy chính
+```
+ 
+**3. Biên dịch và chạy:**
+```bash
+# Biên dịch tất cả file .java từ thư mục gốc
+javac -encoding utf-8 -d out Main.java controller/*.java model/*.java view/*.java utils/*.java
+ 
 # Chạy ứng dụng
 java -cp out Main
 ```
