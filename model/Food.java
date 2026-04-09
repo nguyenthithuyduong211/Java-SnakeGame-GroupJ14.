@@ -8,7 +8,7 @@ public class Food extends GameObject {
     private Random random = new Random();
     private Color color = Color.RED;
 
-    public Food(int x, int y) {
+    public Food(int x, int y) { 
         super(x, y);
     }
 
