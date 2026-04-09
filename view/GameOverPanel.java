@@ -10,8 +10,7 @@ import java.io.IOException;
 
 public class GameOverPanel extends JPanel {
 
-    private final MainFrame frame;
-    private final GameController controller;
+    private final GameController controller;   // ← chỉ giữ controller
 
     private BufferedImage backgroundImage;
     private BufferedImage buttonImage;
@@ -20,19 +19,17 @@ public class GameOverPanel extends JPanel {
     private final Font buttonFont = new Font("Arial", Font.BOLD, 22);
 
     public GameOverPanel(MainFrame frame, GameController controller, boolean isLevelMode, int scoreOrLevel) {
-        this.frame = frame;
-        this.controller = controller;
+        this.controller = controller;   // ← không cần frame nữa
 
         setLayout(null);
-        setPreferredSize(new Dimension(550, 550));
-        setOpaque(true);
+        setPreferredSize(new Dimension(600, 700));
 
         loadImages();
 
         JLabel title = new JLabel("GAME OVER", SwingConstants.CENTER);
         title.setFont(titleFont);
         title.setForeground(new Color(180, 20, 20));
-        title.setBounds(0, 80, 550, 90);
+        title.setBounds(0, 80, 600, 90);
         add(title);
 
         String message = isLevelMode ? 
@@ -42,16 +39,16 @@ public class GameOverPanel extends JPanel {
         JLabel msgLabel = new JLabel(message, SwingConstants.CENTER);
         msgLabel.setFont(new Font("Arial", Font.BOLD, 26));
         msgLabel.setForeground(new Color(60, 40, 20));
-        msgLabel.setBounds(0, 180, 550, 60);
+        msgLabel.setBounds(0, 180, 600, 60);
         add(msgLabel);
 
-        createImageButton("Chơi lại", 155, 270, e -> replay());
-        createImageButton("Quay về Menu", 155, 340, e -> backToMenu());
+        createImageButton("Chơi lại", 180, 270, e -> replay());
+        createImageButton("Quay về Menu", 180, 340, e -> frame.showMenu());
     }
 
     private void loadImages() {
         try {
-            backgroundImage = ImageIO.read(new File("images/gameover_background.png"));
+            backgroundImage = ImageIO.read(new File("images/menu_background.png"));
             buttonImage = ImageIO.read(new File("images/button_normal.png"));
         } catch (IOException e) {
             System.err.println("Không load được ảnh Game Over");
@@ -85,25 +82,14 @@ public class GameOverPanel extends JPanel {
     }
 
     private void replay() {
-        closeThisPanel();
         controller.restartCurrentLevel();
-    }
-
-    private void backToMenu() {
-        closeThisPanel();
-        frame.showMenu();
-    }
-
-    private void closeThisPanel() {
-        Window window = SwingUtilities.getWindowAncestor(this);
-        if (window != null) window.dispose();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (backgroundImage != null) {
-            g.drawImage(backgroundImage, 0, 0, 550, 550, null);
+            g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), null);
         }
     }
 }
