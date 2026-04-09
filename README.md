@@ -131,15 +131,13 @@ Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
 
 ![z7708589458340_1678bb6c7820afe2eacee9bb56eaf6ec](https://github.com/user-attachments/assets/b0218e50-3009-40a6-800b-f369d91e4024)
 
-
 ```
- 
-**2. Biên dịch và chạy:**
-```bash
-# Biên dịch
-javac -d out -sourcepath src src/Main.java
- 
-# Chạy
+# 2. Biên dịch và chạy:
+
+# Biên dịch (Lệnh này sẽ gom tất cả file .java ở các folder vào thư mục out)
+javac -encoding utf-8 -d out Main.java Controller/*.java model/*.java view/*.java utils/*.java
+
+# Chạy ứng dụng
 java -cp out Main
 ```
  
