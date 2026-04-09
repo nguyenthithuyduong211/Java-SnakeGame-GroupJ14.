@@ -27,37 +27,35 @@ public class LevelWinPanel extends JPanel {
         this.currentLevel = currentLevel;
 
         setLayout(null);
-        setPreferredSize(new Dimension(550, 550));
-        setOpaque(true);
+        setPreferredSize(new Dimension(600, 700));
 
         loadImages();
 
         JLabel title = new JLabel("CHÚC MỪNG!", SwingConstants.CENTER);
         title.setFont(titleFont);
         title.setForeground(new Color(255, 215, 0));
-        title.setBounds(0, 80, 550, 90);
+        title.setBounds(0, 80, 600, 90);
         add(title);
 
         JLabel subtitle = new JLabel("Bạn đã hoàn thành Màn " + currentLevel, SwingConstants.CENTER);
         subtitle.setFont(subtitleFont);
         subtitle.setForeground(new Color(255, 240, 180));
-        subtitle.setBounds(0, 170, 550, 50);
+        subtitle.setBounds(0, 170, 600, 50);
         add(subtitle);
 
-        createImageButton("Màn tiếp theo", 155, 250, e -> nextLevel());
-        createImageButton("Chơi lại màn này", 155, 320, e -> replayLevel());
-        createImageButton("Quay về Menu", 155, 390, e -> backToMenu());
+        createImageButton("Màn tiếp theo", 180, 250, e -> nextLevel());
+        createImageButton("Chơi lại màn này", 180, 320, e -> replayLevel());
+        createImageButton("Quay về Menu", 180, 390, e -> frame.showMenu());
     }
 
     private void loadImages() {
-        try {
-            backgroundImage = ImageIO.read(new File("images/win_background.png"));
-            buttonImage = ImageIO.read(new File("images/button_normal.png"));
-        } catch (IOException e) {
-            System.err.println("Không load được ảnh Win Panel");
-        }
+    try {
+        backgroundImage = ImageIO.read(new File("images/menu_background.png"));
+        buttonImage = ImageIO.read(new File("images/button_normal.png"));
+    } catch (IOException e) {
+        System.err.println("Không load được ảnh Win Panel");
     }
-
+}
     private void createImageButton(String text, int x, int y, java.awt.event.ActionListener listener) {
         JButton btn = new JButton(text) {
             @Override
@@ -85,31 +83,19 @@ public class LevelWinPanel extends JPanel {
     }
 
     private void nextLevel() {
-        closeThisPanel();
         int next = Math.min(currentLevel + 1, 5);
         frame.startLevel(controller.getLevelConfig(next));
     }
 
     private void replayLevel() {
-        closeThisPanel();
         frame.startLevel(controller.getLevelConfig(currentLevel));
-    }
-
-    private void backToMenu() {
-        closeThisPanel();
-        frame.showMenu();
-    }
-
-    private void closeThisPanel() {
-        Window window = SwingUtilities.getWindowAncestor(this);
-        if (window != null) window.dispose();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (backgroundImage != null) {
-            g.drawImage(backgroundImage, 0, 0, 550, 550, null);
+            g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), null);
         }
     }
 }
