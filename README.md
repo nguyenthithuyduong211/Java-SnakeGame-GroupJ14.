@@ -128,7 +128,9 @@ Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
  
 **1. Clone repository về máy:**
 ```bash
-<img width="111" height="110" alt="image" src="https://github.com/user-attachments/assets/9ca345df-bbc2-44e4-9948-8410a831d096" />
+
+![z7708589458340_1678bb6c7820afe2eacee9bb56eaf6ec](https://github.com/user-attachments/assets/b0218e50-3009-40a6-800b-f369d91e4024)
+
 
 ```
  
