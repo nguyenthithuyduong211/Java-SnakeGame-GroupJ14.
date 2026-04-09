@@ -110,11 +110,11 @@ Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
  
 | Phím | Hành động |
 |------|-----------|
-| `W` / `↑` | Di chuyển lên |
-| `S` / `↓` | Di chuyển xuống |
-| `A` / `←` | Di chuyển trái |
-| `D` / `→` | Di chuyển phải |
-| `P` | Tạm dừng / Tiếp tục |
+|`↑` | Di chuyển lên |
+|`↓` | Di chuyển xuống |
+|`←` | Di chuyển trái |
+| `→` | Di chuyển phải |
+| `Nhấn chuột vào nút Tạm dừng` | Tạm dừng |
  
 ---
 
