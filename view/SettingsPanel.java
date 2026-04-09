@@ -10,16 +10,18 @@ import java.io.IOException;
 
 public class SettingsPanel extends JPanel {
 
+    private final MainFrame frame;   
+
     private BufferedImage backgroundImage;
     private BufferedImage buttonImage;
 
     private final Font titleFont = new Font("Arial", Font.BOLD, 42);
     private final Font buttonFont = new Font("Arial", Font.BOLD, 22);
 
-    public SettingsPanel() {
+    public SettingsPanel(MainFrame frame) {
+        this.frame = frame;
         setLayout(null);
-        setBorder(null);
-        setPreferredSize(new Dimension(600, 840));   // ← FIX TRÀN VIỀN
+        setPreferredSize(new Dimension(600, 700));
 
         loadImages();
 
@@ -29,28 +31,30 @@ public class SettingsPanel extends JPanel {
         title.setBounds(0, 80, 600, 80);
         add(title);
 
+        // Checkbox Nhạc nền
         JCheckBox musicCheck = new JCheckBox("Nhạc nền", SoundManager.isMusicEnabled());
         musicCheck.setBounds(120, 220, 360, 50);
         musicCheck.setFont(buttonFont);
-        musicCheck.setForeground(Color.WHITE);
+        musicCheck.setForeground(new Color(40, 25, 10));
         musicCheck.setOpaque(false);
         musicCheck.addActionListener(e -> SoundManager.setMusicEnabled(musicCheck.isSelected()));
         add(musicCheck);
 
+        // Checkbox Âm thanh hiệu ứng
         JCheckBox sfxCheck = new JCheckBox("Âm thanh hiệu ứng", SoundManager.isSfxEnabled());
         sfxCheck.setBounds(120, 290, 360, 50);
         sfxCheck.setFont(buttonFont);
-        sfxCheck.setForeground(Color.WHITE);
+        sfxCheck.setForeground(new Color(40, 25, 10));
         sfxCheck.setOpaque(false);
         sfxCheck.addActionListener(e -> SoundManager.setSfxEnabled(sfxCheck.isSelected()));
         add(sfxCheck);
 
-        createImageButton("ĐÓNG", 180, 480, e -> closeThisPanel());
+        createImageButton("ĐÓNG", 180, 480, e -> this.frame.showMenu());   // ← CHỈ SỬA DÒNG NÀY
     }
 
     private void loadImages() {
         try {
-            backgroundImage = ImageIO.read(new File("images/settings_background.png"));
+            backgroundImage = ImageIO.read(new File("images/menu_background.png"));
             buttonImage = ImageIO.read(new File("images/button_normal.png"));
         } catch (IOException e) {
             System.err.println("Không load được ảnh Settings");
@@ -78,13 +82,9 @@ public class SettingsPanel extends JPanel {
         btn.setBorderPainted(false);
         btn.setContentAreaFilled(false);
         btn.setOpaque(false);
+        btn.setCursor(new Cursor(Cursor.HAND_CURSOR));
         btn.addActionListener(listener);
         add(btn);
-    }
-
-    private void closeThisPanel() {
-        Window window = SwingUtilities.getWindowAncestor(this);
-        if (window != null) window.dispose();
     }
 
     @Override
