@@ -9,7 +9,7 @@
 |---|---|---|---|---|
 | 1 | **Nguyễn Thị Thùy Dương** | 3120225035 | Model & Utils, Xây dựng Class thực thể, I/O File & Exception, Quản lý GitHub & Documentation | [GitHub](https://github.com/nguyenthithuyduong211) |
 | 2 | **Đỗ Ngọc Khánh An** | 3120225001 | View, Đồ họa Game, Thiết kế Giao diện (Swing/Layout) | [GitHub](https://github.com/ngockhanhan15-netizen) |
-| 3 | **Phạm Khánh Vy** | 3120225180 | Controller, Game Loop, Xử lý sự kiện & Va chạm | [GitHub](https://github.com/kzylazy) |
+| 3 | **Phạm Khánh Vy** | 3120225180 | Controller, Game Loop, Xử lý sự kiện & Va chạm | [GitHub](https://github.com/kzylazyy) |
 
 ## 📝 Giới thiệu dự án (Description)
  
