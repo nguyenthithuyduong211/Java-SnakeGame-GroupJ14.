@@ -1,6 +1,6 @@
 package view;
 
-import controller.GameController;
+import utils.FileHandler;      
 import utils.SoundManager;
 import javax.swing.*;
 import java.awt.*;
@@ -19,15 +19,14 @@ public class MainMenuPanel extends JPanel {
     private final Font buttonFont = new Font("Arial", Font.BOLD, 22);
     private final Font smallFont = new Font("Arial", Font.BOLD, 18);
 
+    private JLabel highScoreLabel;          // ← ĐÃ LÀM THÀNH FIELD
     private float titleScale = 1.0f;
     private boolean scaleUp = true;
     private Timer bounceTimer;
 
-    public MainMenuPanel(MainFrame f, GameController c) {
+    public MainMenuPanel(MainFrame f) {
         this.frame = f;
-
         setLayout(null);
-
         loadImages();
         startBounceEffect();
 
@@ -37,16 +36,16 @@ public class MainMenuPanel extends JPanel {
         title.setBounds(0, 35, 600, 110);
         add(title);
 
-        JLabel highScoreLabel = new JLabel("HIGHSCORE: " + GameController.getGlobalHighScore(), 
-                                          SwingConstants.CENTER);
+        // Điểm cao (đã là field để có thể update sau)
+        highScoreLabel = new JLabel("ĐIỂM CAO: " + FileHandler.readHighScore(), SwingConstants.CENTER);
         highScoreLabel.setFont(smallFont);
         highScoreLabel.setForeground(new Color(65, 45, 25));
         highScoreLabel.setBounds(0, 145, 600, 50);
         add(highScoreLabel);
 
         createButton("Chơi", 180, 215, e -> frame.showLevelSelect());
-        createButton("Chế độ vô tận", 180, 290, e -> showEndlessDialog());
-        createButton("Cài đặt", 180, 365, e -> showSettingsDialog());
+        createButton("Chế độ vô tận", 180, 290, e -> frame.showEndlessMode());
+        createButton("Cài đặt", 180, 365, e -> frame.showSettings());
         createButton("Thoát", 180, 440, e -> System.exit(0));
     }
 
@@ -105,22 +104,10 @@ public class MainMenuPanel extends JPanel {
         add(btn);
     }
 
-    private void showEndlessDialog() {
-        JDialog dialog = new JDialog((Frame) SwingUtilities.getWindowAncestor(this), true);
-        dialog.setUndecorated(true);
-        dialog.setSize(600, 840);
-        dialog.setLocationRelativeTo(this);
-        dialog.setContentPane(new EndlessModePanel(frame));
-        dialog.setVisible(true);
-    }
-
-    private void showSettingsDialog() {
-        JDialog dialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), true);
-        dialog.setUndecorated(true);
-        dialog.setSize(600, 840);
-        dialog.setLocationRelativeTo(this);
-        dialog.setContentPane(new SettingsPanel());
-        dialog.setVisible(true);
+    /** Phương thức mới: cập nhật điểm cao mỗi khi quay về menu */
+    public void updateHighScore() {
+        highScoreLabel.setText("ĐIỂM CAO: " + FileHandler.readHighScore());
+        repaint();
     }
 
     @Override
