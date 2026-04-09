@@ -21,15 +21,29 @@ public class Food extends GameObject {
         setY(random.nextInt(maxH));
     }
 
-    public void respawn(int maxW, int maxH, List<Obstacle> obstacles) {
+    /**
+     * Respawn an toàn: tránh vật cản + tránh toàn bộ thân rắn
+     */
+    public void respawn(int maxW, int maxH, List<Obstacle> obstacles, Snake snake) {
+        int attempts = 0;
         do {
             respawn(maxW, maxH);
-        } while (collidesWithObstacles(obstacles));
+            attempts++;
+            if (attempts > 1000) break; // an toàn nếu lưới gần đầy
+        } while (collidesWithObstacles(obstacles) || collidesWithSnake(snake));
     }
 
     private boolean collidesWithObstacles(List<Obstacle> obstacles) {
         for (Obstacle o : obstacles) {
             if (o.getX() == getX() && o.getY() == getY()) return true;
+        }
+        return false;
+    }
+
+    private boolean collidesWithSnake(Snake snake) {
+        if (snake == null) return false;
+        for (int[] part : snake.getBody()) {
+            if (part[0] == getX() && part[1] == getY()) return true;
         }
         return false;
     }
