@@ -53,37 +53,38 @@
 Mã nguồn tổ chức theo mô hình **MVC (Model – View – Controller)**:
  
 ```              
- ┣ 📂 controller               # Logic nghiệp vụ
- ┃ ┣ 📜 GameController.java    # Điều phối toàn bộ game
- ┃ ┗ 📜 GameLoop.java          # Vòng lặp Timer
- ┣ 📂 model                    # Lớp thực thể – dữ liệu game
- ┃ ┣ 📜 GameObject.java        # Abstract base class (x, y, respawn)
- ┃ ┣ 📜 Snake.java             # Logic di chuyển, phát triển rắn
- ┃ ┣ 📜 Food.java              # Vị trí và màu sắc thức ăn
- ┃ ┗ 📜 Obstacle.java          # Chướng ngại vật cố định
- ┣ 📂 view                     # Giao diện người dùng
- ┃ ┣ 📜 MainFrame.java         # JFrame chính, CardLayout
- ┃ ┣ 📜 GamePanel.java         # paintComponent – vẽ game
- ┃ ┣ 📜 MainMenuPanel.java     # Menu chính + bounce effect
- ┃ ┣ 📜 LevelSelectPanel.java  # Chọn màn chơi
- ┃ ┣ 📜 EndlessModePanel.java  # Cài đặt chế độ vô tận
- ┃ ┣ 📜 GameOverPanel.java     # Màn hình thua cuộc
- ┃ ┣ 📜 LevelWinPanel.java     # Màn hình thắng màn
- ┃ ┣ 📜 SettingsPanel.java     # Cài đặt âm thanh
- ┃ ┗ 📜 SettingsDialog.java    # Dialog cài đặt âm lượng
- ┣ 📂 utils                    # Tiện ích dùng chung
- ┃ ┣ 📜 Difficulty.java        # Enum độ khó (EASY/MEDIUM/HARD)
- ┃ ┣ 📜 GameMode.java          # Enum chế độ chơi
- ┃ ┣ 📜 LevelConfig.java       # Cấu hình từng màn
- ┃ ┣ 📜 FileHandler.java       # Đọc/ghi highscore.txt
- ┃ ┣ 📜 Settings.java          # Đọc/ghi settings.txt
- ┃ ┣ 📜 SoundManager.java      # Quản lý âm thanh
- ┃ ┗ 📜 InvalidScoreException.java  # Custom Exception
- ┣ 📂 images                   # Ảnh nền & button PNG
- ┣ 📂 sounds                   # File âm thanh .wav
- ┣ 📜 Main.java                # Entry-point khởi động ứng dụng
- ┣ 📜 highscore.txt            # Lưu điểm cao (tự tạo khi chạy)
- ┣ 📜 settings.txt             # Lưu cài đặt (tự tạo khi chạy)
+┣ 📂 controller                 # Logic nghiệp vụ
+ ┃ ┣ 📜 GameController.java     # Điều phối toàn bộ game
+ ┃ ┗ 📜 GameLoop.java           # Vòng lặp Timer
+ ┣ 📂 model                      # Lớp thực thể – dữ liệu game
+ ┃ ┣ 📜 GameObject.java         # Abstract base class (x, y, respawn)
+ ┃ ┣ 📜 Snake.java              # Logic di chuyển, phát triển rắn
+ ┃ ┣ 📜 Food.java               # Vị trí và màu sắc thức ăn
+ ┃ ┗ 📜 Obstacle.java           # Chướng ngại vật cố định
+ ┣ 📂 view                       # Giao diện người dùng
+ ┃ ┣ 📜 MainFrame.java          # JFrame chính, CardLayout
+ ┃ ┣ 📜 GamePanel.java          # paintComponent – vẽ game
+ ┃ ┣ 📜 MainMenuPanel.java      # Menu chính + bounce effect
+ ┃ ┣ 📜 LevelSelectPanel.java   # Chọn màn chơi
+ ┃ ┣ 📜 EndlessModePanel.java   # Cài đặt chế độ vô tận
+ ┃ ┣ 📜 PausePanel.java         # Màn hình tạm dừng, nút Resume/Quit
+ ┃ ┣ 📜 GameOverPanel.java      # Màn hình thua cuộc
+ ┃ ┣ 📜 LevelWinPanel.java      # Màn hình thắng màn
+ ┃ ┣ 📜 SettingsPanel.java      # Cài đặt âm thanh
+ ┃ ┗ 📜 SettingsDialog.java     # Dialog cài đặt âm lượng
+ ┣ 📂 utils                      # Tiện ích dùng chung
+ ┃ ┣ 📜 Difficulty.java         # Enum độ khó (EASY/MEDIUM/HARD)
+ ┃ ┣ 📜 GameMode.java           # Enum chế độ chơi
+ ┃ ┣ 📜 LevelConfig.java        # Cấu hình từng màn
+ ┃ ┣ 📜 FileHandler.java        # Đọc/ghi highscore.txt
+ ┃ ┣ 📜 Settings.java           # Đọc/ghi settings.txt
+ ┃ ┣ 📜 SoundManager.java       # Quản lý âm thanh
+ ┃ ┗ 📜 InvalidScoreException.java # Custom Exception
+ ┣ 📂 images                     # Ảnh nền & button PNG
+ ┣ 📂 sounds                     # File âm thanh .wav
+ ┣ 📜 Main.java                  # Entry-point khởi động ứng dụng
+ ┣ 📜 highscore.txt              # Lưu điểm cao (tự tạo khi chạy)
+ ┣ 📜 settings.txt               # Lưu cài đặt (tự tạo khi chạy)
  ┣ 📜 .gitignore
  ┗ 📜 README.md
 ```
