@@ -7,7 +7,7 @@
 ## 👥 Thông tin nhóm (Team Members)
 | STT | Họ và Tên | Mã Sinh Viên | Vai trò / Nhiệm vụ | Link GitHub Cá Nhân |
 |---|---|---|---|---|
-| 1 | **Phạm Khánh Vy** | 3120225180 | Controller, đồng bộ, tối ưu hóa hệ thống | [GitHub](https://github.com/kzylazyy) |
+| 1 | **Phạm Khánh Vy** | 3120225180 | Controller, đồng bộ, tối ưu hóa hệ thống và tính năng | [GitHub](https://github.com/kzylazyy) |
 | 2 | **Nguyễn Thị Thùy Dương** | 3120225035 | Model & Utils, I/O File & Exception,Documentation | [GitHub](https://github.com/nguyenthithuyduong211) |
 | 3 | **Đỗ Ngọc Khánh An** | 3120225001 | View, Đồ họa Game, Thiết kế Giao diện (Swing/Layout) | [GitHub](https://github.com/ngockhanhan15-netizen) |
 
